@@ -101,41 +101,7 @@ yz<-(x4[i]+x2[i]+x3[i]+x1[i]+x0[i])/5
 
 accuracy(CPUW5$y[4174:8347],yz)
 
-##############################FCGPANN
-ytest<-CPUW5$y[4174:8347]
 
-m1=mean(ytest)
-yfcgp<-as.vector(matrix(0,nrow=4174))
-set.seed(4201)
-for(j in 1:length(x1) ){
-if(ytest[j]> m1)
-yfcgp[j]<-ytest[j]-0.0463
-else yfcgp[j]<-ytest[j]+0.0463
-}
-accuracy(CPUW5$y[4174:8347],yfcgp)
-
-######## WRITE output of FCGP Pred
-# Write CSV in R
-yfcgp<-yfcgp*100
-write.csv(yfcgpP, file = "MyFCGPP.csv")
-yfcgp
-
-##############################RCGPANN
-ytest<-CPUW5$y[4174:8347]
-
-m1=mean(ytest)
-yrcgp<-as.vector(matrix(0,nrow=4174))
-set.seed(4201)
-for(j in 1:length(x1) ){
-if(ytest[j]> m1)
-yrcgp[j]<-ytest[j]-0.0461
-else yrcgp[j]<-ytest[j]+0.0461
-}
-####write RCGP
-yrcgpP<-yrcgp*100
-write.csv(yrcgpP, file = "MyRCGPP.csv")
-
-####################
 
 yfcgp<-yfcgp*100
 
@@ -160,26 +126,7 @@ write.csv(h1, file = "h1.csv")
 
 CPUPC<-as.vector(matrix(0,nrow=4174))
 
-m1=mean(CPUPCh)
-yrcgpS<-as.vector(matrix(0,nrow=4176))
-set.seed(4201)
-for(j in 1:length(x1) ){
-if(CPUPCh[j]> m1)
-yrcgpS[j]<-CPUPCh[j]-0.0445
-else yrcgpS[j]<-CPUPCh[j]+0.0445
-}
-####################FCGPANN test
 
-CPUPC<-as.vector(matrix(0,nrow=4174))
-
-m1=mean(CPUPCh)
-yfcgp<-as.vector(matrix(0,nrow=4176))
-set.seed(4201)
-for(j in 1:length(x1) ){
-if(CPUPCh[j]> m1)
-yfcgp[j]<-CPUPCh[j]-0.046
-else yfcgp[j]<-CPUPCh[j]+0.046
-}
 
 
 ########TREND and SEASONAL components

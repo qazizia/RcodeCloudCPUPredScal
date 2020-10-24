@@ -233,7 +233,7 @@ accuracy(predARNNT,CPUTS1[4177:8352])
  accuracy(predARNNT,CPUTS1[4177:8352])
 
 
-############FCGPANN PLOTS
+############CGPANN PLOTS
 attach(mtcars)
 par(mfrow=c(2,2)) 
 
